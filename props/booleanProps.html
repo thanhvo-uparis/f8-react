@@ -12,10 +12,26 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
+        const Header = (props) => {
+            console.log(props);
+            let result = props.status ? "Je suis adulte" : "Je suis enfant";
+            
+            return (
+                <div>
+                    <p>{result}</p>
+                </div>
+            )
+        }
 
         const App = () => {
+            let currentYear = 2022;
+            let birthYear = 1997;
+            const age = currentYear - birthYear;
+
+            let status = age >= 18;
+
             return (
-                <p>Welcome to my project at 30 days of React</p>
+                <Header status={status}/>
             )
         }
     ReactDOM.render(<App/>, document.getElementById("root"))
