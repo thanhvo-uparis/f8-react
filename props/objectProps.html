@@ -14,7 +14,7 @@
     <div id="root"></div>
     <script type="text/babel">
         const Header = (props) => {
-            console.log(props.data.subtitle);
+            console.log(props);
             return (
                 <div>
                     <p>Welcome to my object props type</p>
@@ -24,6 +24,7 @@
         }
 
         const App = () => {
+            const skills = ["React", "Angular", "Vuejs"];
             const data = {
                         welcome: "Welcome to 30 days of React",
                         title: "Getting Started React",
@@ -32,7 +33,7 @@
 
             return (
                 <div>
-                    <Header data= {data} />
+                    <Header data= {data} skills={skills} />
                 </div>
             )
         }
