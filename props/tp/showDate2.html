@@ -12,24 +12,49 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-
-        const Header = ({handleClick}) => {
+        
+        // <button onClick={() => alert(handleTime(new Date()))}>Show time</button>
+        // <button onClick={handleClick}>Greet People</button>
+        const Boutton = ({handleClick, text}) => {
                 return (
                     <div>
-                        <p>Welcome to 30 days of React</p>
-                        <button>Show time</button>
-                        <button onClick={handleClick}>Greet People</button>
+                        <button onClick={handleClick}>{text}</button>
                     </div>
                 )
             }
         
          const App = () => {
-            const handleClick = () => {
+            const handleTitle = () => {
                 alert("Welcome to 30 Days Of React Challenge, 2022");    
+            }
+
+            const handleTime = (time) => {
+                const months = [
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December',
+                ];
+
+                const month = months[time.getMonth()];
+                const year = time.getFullYear();
+                const date = time.getDate();
+
+                return `${date} ${month} ${year}`
             }
             return (
                     <div>
-                        <Header handleClick={handleClick}/>
+                        <p>Welcome to 30 days of React</p>
+                        <Boutton text="Show time" handleClick={() => alert(handleTime(new Date()))}/>
+                        <Boutton text="Greet People" handleClick={handleTitle}/>
                     </div>
             )
         }
