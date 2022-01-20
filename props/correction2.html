@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Correction 1</title>
+    <style>
+      .app-container {
+        width: 400px;
+        height: 350px;
+        border: 1px solid #ccc;
+      }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      const courses = [
+    {
+      "id": 2,
+      "title": "HTML, CSS từ Zero đến Hero",
+      "slug": "html-css",
+      "description": "Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+      "image": "courses/2.png",
+      "content": null,
+      "video_type": "youtube",
+      "video": "R6plN3FvzFY",
+      "priority": 10,
+      "students_count": 116375,
+      "old_price": 0,
+      "price": 0,
+      "is_pro": false,
+      "deleted_at": null,
+      "created_at": "2020-04-10T14:23:13.000000Z",
+      "updated_at": "2022-01-18T21:25:26.000000Z",
+      "image_url": "https://cdn.fullstack.edu.vn/f8-production/courses/2.png",
+      "video_url": "https://www.youtube.com/watch?v=R6plN3FvzFY"
+    },
+    {
+      "id": 1,
+      "title": "JavaScript Cơ Bản",
+      "slug": "javascript-co-ban",
+      "description": "Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học.",
+      "image": "courses/1.png",
+      "content": null,
+      "video_type": "youtube",
+      "video": "0SJE9dYdpps",
+      "priority": 30,
+      "students_count": 68712,
+      "old_price": 0,
+      "price": 0,
+      "is_pro": false,
+      "deleted_at": null,
+      "created_at": "2020-06-10T14:23:13.000000Z",
+      "updated_at": "2022-01-18T21:31:22.000000Z",
+      "image_url": "https://cdn.fullstack.edu.vn/f8-production/courses/1.png",
+      "video_url": "https://www.youtube.com/watch?v=0SJE9dYdpps"
+    },
+    {
+      "id": 7,
+      "title": "Kiến Thức Nhập Môn IT",
+      "slug": "lessons-for-newbie",
+      "description": "Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.",
+      "image": "courses/7.png",
+      "content": null,
+      "video_type": "youtube",
+      "video": "M62l1xA5Eu8",
+      "priority": 0,
+      "students_count": 49678,
+      "old_price": 0,
+      "price": 0,
+      "is_pro": false,
+      "deleted_at": null,
+      "created_at": "2020-02-10T14:23:13.000000Z",
+      "updated_at": "2022-01-18T19:46:10.000000Z",
+      "image_url": "https://cdn.fullstack.edu.vn/f8-production/courses/7.png",
+      "video_url": "https://www.youtube.com/watch?v=M62l1xA5Eu8"
+    },
+    {
+      "id": 3,
+      "title": "Responsive Với Grid System",
+      "slug": "responsive-web-design",
+      "description": "Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.",
+      "image": "courses/3.png",
+      "content": null,
+      "video_type": "youtube",
+      "video": "uz5LIP85J5Y",
+      "priority": 20,
+      "students_count": 18354,
+      "old_price": 0,
+      "price": 0,
+      "is_pro": false,
+      "deleted_at": null,
+      "created_at": "2020-05-10T14:23:13.000000Z",
+      "updated_at": "2022-01-18T18:03:25.000000Z",
+      "image_url": "https://cdn.fullstack.edu.vn/f8-production/courses/3.png",
+      "video_url": "https://www.youtube.com/watch?v=uz5LIP85J5Y"
+    }
+  ];
+
+        const CourseItem = (props) => {
+          return (
+              <div className="app-container">
+                <p>Welcome to my project</p>
+                <h3>{props.data.title}</h3>
+                <p>{props.data.description}</p>
+              </div>
+          )
+        }
+
+        const App = () => {
+            return (
+                <div>
+                    {courses.map(course => (
+                        <CourseItem
+                            key={course.id}
+                            data={course}
+                        />
+                    ))}
+                </div>
+            )
+        }
+    
+
+    ReactDOM.render(<App/>, document.getElementById("root"));
+
+    </script>
+</body>
+</html>
