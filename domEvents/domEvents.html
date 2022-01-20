@@ -13,12 +13,22 @@
     <div id="root"></div>
     <script type="text/babel">
 
-        const HandleClick = () => {
+        const HandleClick = ({datas}) => {
+            console.log({datas});
             return (
                 <div>
                     <p>Welcome to my project</p>
                     <button onClick={(event) => console.log(event.target)}>Click for target</button>
                     <button onClick={() => console.log(Math.random())}>Click me</button>
+                    <br/>
+                    <br/>
+                    {datas.map(data => {
+                        return (
+                            <div>
+                                <button onClick={() => alert(data.lastName)}>To {data.lastName}</button>
+                            </div>
+                        )
+                    })}
                 </div>
             )
         }
@@ -41,7 +51,7 @@
         const App = () => {
             return (
                 <div>
-                    <HandleClick/>
+                    <HandleClick datas={datas}/>
                 </div>
             )
         }
