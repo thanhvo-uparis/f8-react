@@ -13,12 +13,12 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        const Header = ({data}) => {
-            console.log(data.title);
+        const Header = (props) => {
+            console.log(props.data.subtitle);
             return (
                 <div>
                     <p>Welcome to my object props type</p>
-                    <p>{data.title}</p>
+                    <p>{props.data.subtitle}</p>
                 </div>
             )
         }
