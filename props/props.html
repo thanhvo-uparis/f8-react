@@ -72,7 +72,7 @@
 
     <script type="text/babel">
 
-    const course = [
+    const courses = [
     {
       "id": 2,
       "title": "HTML, CSS từ Zero đến Hero",
@@ -157,36 +157,30 @@
 
     const skills = ["Javascript", "HTML", "Python"];
 
-    const Courses = (props) => {
-
-        const title = props.courses.map(course => {
-          return (
-            <div className="app-container">
-              <div className="app-item">
-                <h3 className="item-title">{course.title}</h3>
-                <div className="item-image">
-                  <img src={course.image_url} alt="image of course"/>
-                </div>
-                <li className="item-description">{course.description}</li>
-                <li className="item-price">Price: {course.price}$</li>
-                <button>Buy course</button>
-              </div>
-            </div>
-          )
-
-        });
-
+    const Courses = ({data}) => {
         return (
-            <div>
-              <h3>Welcome to my project</h3>
-              {title}
-            </div>
+          <div>
+            {data.map(course => (
+              <div className="app-container">
+                    <h3>Welcome to 30 Days Of React</h3>
+                    <div className="app-item">
+                      <h3 className="item-title">{course.title}</h3>
+                      <div className="item-image">
+                        <img src={course.image_url} alt="image of course"/>
+                      </div>
+                      <li className="item-description">{course.description}</li>
+                      <li className="item-price">Price: {course.price}$</li>
+                      <button>Buy course</button>
+                    </div>
+                  </div>
+            ))}
+          </div>
         )
     }
 
     const App = () => {
         return (
-            <Courses courses={course}/>
+            <Courses data={courses} />
         )
     }
 
