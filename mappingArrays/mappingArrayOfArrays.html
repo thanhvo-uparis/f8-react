@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Number List</title>
+    <style>
+        .competence-item {
+            width: 195px;
+            background-color: powderblue;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .point {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const skills = [
+        ['HTML', 10],
+        ['CSS', 7],
+        ['JavaScript', 9],
+        ['React', 8],
+    ]
+    
+    const Competence = ({competence: [tech, niveau]}) => {
+        return (
+            <div className="competence-item">
+                <span>{tech}:</span> <span className="point">{niveau}</span>
+            </div>
+        )
+    }
+
+    const Skills = ({skills}) => {
+        
+        return (
+            <div>
+                {skills.map(skill => {
+                    return (
+                        <div>
+                           <Competence competence={skill}/>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    }
+
+    const App = () => {
+    return (
+        <div className='container'>
+        <div>
+            <h1>Skills List</h1>
+            <Skills skills={skills}/>
+        </div>
+        </div>
+    )
+    }
+
+    ReactDOM.render(<App/>, document.getElementById("root"));
+    </script>
+</body>
+</html>
