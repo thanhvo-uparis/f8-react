@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Number Generator</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // const objects = [
+        //     {
+        //         color: "green",
+        //         value: [0, 5, 6, 7,10, 8]
+        //     },
+        //     {
+        //         color: "blue",
+        //         value: [1, 4, 9, 2, 3]
+        //     }
+        // ];
+
+        // const Object = ({object: {color, value}}) => {
+        //     // const style = {
+        //     //     "color": {color}
+        //     // }
+
+        //     return (
+        //         <div>
+        //             <div class="square">
+        //                 {console.log(value)}
+        //             </div>
+        //         </div>
+        //     )
+        // }
+
+        const App = () => {
+            let myArray = [];
+            function array() {
+                for(let i=0; i<10; i++) {
+                    myArray.push(i);
+                    console.log(myArray);
+                }
+            }
+            return (
+                <div className='container'>
+                    <h2>30 Days Of React</h2>
+                    {array({myArray})}
+                </div>
+            )
+            }
+        
+        ReactDOM.render(<App/>, document.getElementById("root"));
+    </script>
+    
+</body>
+</html>

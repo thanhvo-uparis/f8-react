@@ -21,14 +21,14 @@
         { name: 'Iceland', city: 'Reykjavík' },
         ];
 
-        const Country = ({countries: {name, city}}) => {
+        const Country = ({countries}) => {
             return (
                 <div>
                     {countries.map(countrie => {
                         return (
                             <div>
-                            <h2>{name}</h2>
-                            <p>{city}</p>
+                            <h2>{countrie.name}</h2>
+                            <p>{countrie.city}</p>
                             </div>
                         )
                     })}
