@@ -3,12 +3,17 @@ import {useState} from 'react';
 import React from 'react';
 
 function App() {
-  const [count, setCount] = useState(1);
 
-  const handleClick = () => {
+  const [info, setInfo] = useState({
+    name: "Nicola Vincent",
+    age: 23,
+    addresse: "43 rue de République Paris",
+  });
+
+  const changeInfos = () => {
     return (
       <div>
-        {setCount(count +1)}
+        {setInfo({...info, bio: "Front end Developer"})}
       </div>
     )
   }
@@ -17,8 +22,8 @@ function App() {
   return (
     <div className="App">
       <p>Welcome to my project</p>
-      <p>{count}</p>
-      <button onClick={handleClick}>Click me</button>
+      <p>{JSON.stringify(info)}</p>
+      <button onClick={() => changeInfos()}>Click me</button>
     </div>
       
   );
