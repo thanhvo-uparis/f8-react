@@ -23,4 +23,3 @@ const Gifts = () => {
 }
  
 export default Gifts;
-
