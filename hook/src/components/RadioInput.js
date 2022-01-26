@@ -15,27 +15,31 @@ const courses = [
     }
 ];
 
-const checked = () => {
-    return (
-        <div>
-            {console.log("test")}
-        </div>
-    )
-}
-
 const RadioInput = () => {
-    const [name, setName] = useState();
+
+    const handleSubmit = () => {
+        return (
+            <div>
+                {console.log({id: check})}
+            </div>
+        )
+    }
+
+    const [check, setCheck] = useState();
+
     return ( 
         <div>
             <h3>Welcome to my project</h3>
             {courses.map(course => {
                 return (
-                    <div>
-                        <input type="radio" onClick={checked}></input>
+                    <div key={course.id}>
+                        <input type="radio" onClick={() => setCheck(course.id)} checked={course.id === check}></input>
                         <label>{course.name}</label>
-                   </div>
+                    </div>
                 )
             })}
+            <button onClick={handleSubmit}>Submit</button>
+        
         </div>
      );
 }
